@@ -13,4 +13,11 @@ You can see that counties vary within a state.
 
 ![Nation Wide Distribution](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/NWdist.png)
 
-Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending. 
+Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending.
+
+
+y_test = df[df.year == max(year)]
+y_test = y_test.filter(['cty_idx','Cost_per_Beneficiary'])
+y_test.sort_values('cty_idx', inplace=True)
+y_test.set_index('cty_idx', inplace=True)
+y_test_full_counties = y_test.reindex(index = range(3048))
