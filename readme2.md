@@ -1,0 +1,16 @@
+# Medicare Cost Modeling
+## Adapted from Brendan Drew's [Capstone](https://github.com/brendan-drew/County-Medicare-Spending)
+
+## Data
+Medicare spending data was collected at county level from 2007 until 2014.  Some current data is available from Medicare's public dataset however additional data from Dartmouth's Medicare study was only collected until 2014.  The data contains the number of beneficiaries, spending, medical data, and population demographics for US counties.
+
+## Question
+Brendan was able to construct a hierarchical linear model to estimate 2014 spending data.  He used hyper parameters from the distributions of all counties and used that information to influence his county level regressions.
+
+![State Wide Distribution](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/SWdist.png)
+
+You can see that counties vary within a state.
+
+![Nation Wide Distribution](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/NWdist.png)
+
+Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending. 
