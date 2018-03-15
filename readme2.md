@@ -23,24 +23,24 @@ Use bayesian linear regression models trained on 2007 - 2013 data for 5 states w
 
 ![pooled model](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/poolgraph.png)
 
-pool RMSE = 1.23304929307
+pool RMSE = 1.23304929307 or 1452.11$/Beneficiary
 
 ![Individual County Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/IndCtygraph.png)
 
-Individual County RMSE = 0.601965966934
+Individual County RMSE = 0.601965966934 or 708.91$/Beneficiary
 
 ![Hierarchical County Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/H1graph.png)
 
-Hierarchical County RMSE= 0.641665953224
+Hierarchical County RMSE= 0.641665953224 or 755.66$/Beneficiary
 
 
 ![Individual State Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/IndStategraph.png)
 
-Individual State RMSE = 0.601965966934
+Individual State RMSE = 0.601965966934 or 708.91$/Beneficiary
 
 ![Hierarchical State Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/H2graph.png)
 
-Hierarchical State RMSE = 0.421011829392
+Hierarchical State RMSE = 0.421011829392 or 495.80$/Beneficiary
 
 ## Did the Hierarchical Model improve predictions?
 The hierarchical model for both county level regressions and state level regressions moved the distribution of residuals closer to zero.  The hierarchical model for state level regressions also narrowed the distribution and improved the RMSE score.  Hierarchical modeling of county level regressions did not improve the RMSE score
