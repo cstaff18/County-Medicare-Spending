@@ -13,7 +13,7 @@ Brendan was able to construct a hierarchical linear model to estimate 2014 spend
 
 You can see that counties vary within a state.
 
-![Nation Wide Distribution](/https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/NWdist.png)
+![Nation Wide Distribution](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/NWdist.png)
 
 Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending.
 
