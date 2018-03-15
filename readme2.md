@@ -7,6 +7,8 @@ Medicare spending data was collected at county level from 2007 until 2014.  Some
 ## Question
 Brendan was able to construct a hierarchical linear model to estimate 2014 spending data.  He used hyper parameters from the distributions of all counties and used that information to influence his county level regressions.
 
+
+
 ![State Wide Distribution](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/SWdist.png)
 
 You can see that counties vary within a state.
@@ -16,8 +18,33 @@ You can see that counties vary within a state.
 Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending.
 
 
-y_test = df[df.year == max(year)]
-y_test = y_test.filter(['cty_idx','Cost_per_Beneficiary'])
-y_test.sort_values('cty_idx', inplace=True)
-y_test.set_index('cty_idx', inplace=True)
-y_test_full_counties = y_test.reindex(index = range(3048))
+## Modeling
+Use bayesian linear regression models trained on 2007 - 2013 data for 5 states with 3 features: year, MA participation, and IP per 1000 beneficiaries.
+
+![pooled model](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/poolgraph.png)
+
+pool RMSE = 1.23304929307
+
+![Individual County Models](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/IndCtygraph.png)
+
+Individual County RMSE = 0.601965966934
+
+![Hierarchical County Models](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/H1graph.png)
+
+Hierarchical County RMSE= 0.641665953224
+
+
+![Individual State Models](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/IndStategraph.png)
+
+Individual State RMSE = 0.601965966934
+
+![Hierarchical State Models](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/H2graph.png)
+
+Hierarchical State RMSE = 0.421011829392
+
+## Did the Hierarchical Model improve predictions?
+The hierarchical model for both county level regressions and state level regressions moved the distribution of residuals closer to zero.  The hierarchical model for state level regressions also narrowed the distribution and improved the RMSE score.  Hierarchical modeling of county level regressions did not improve the RMSE score
+
+![County Residuals](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/countyresid.png)
+
+![State Residuals](/Users/Coho/DSI/capstone/County-Medicare-Spending/images/stateresid.png)
